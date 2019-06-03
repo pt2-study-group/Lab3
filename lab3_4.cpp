@@ -22,7 +22,7 @@ int main() {
 
 wstring encrypt(const wstring & text, const int key) {
 
-	locale loc("ru_Ru.UTF-8");
+	locale loc("ru_RU.UTF-8");
 	locale::global(loc);
 	wstring output = L"";
 	const int LAUNGUAGE_SIZE = 32;
@@ -42,7 +42,7 @@ wstring encrypt(const wstring & text, const int key) {
 }
 
 wstring toUpperCase(const wstring & input) {	
-	locale loc("ru_Ru.UTF-8");
+	locale loc("ru_RU.UTF-8");
 	locale::global(loc);
 
 	wstring output = L"";
