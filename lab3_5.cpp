@@ -17,7 +17,7 @@ int main() {
 	int key;
 	cin >> key;
 	str = toUpperCase(str);
-	if (str=="") {
+	if (str==L"") {
 		wcout << L"ОШИБКА" << endl;
 		return -1;
 	}
