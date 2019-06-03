@@ -9,9 +9,11 @@ wstring toUpperCase(const wstring& input);
 
 int main() {
 	setlocale(LC_ALL, "Russian");
+	locale loc("ru_RU.UTF-8");
+	locale::global(loc);
 	
 	wstring str = L"Функция должна вернуть строку с зашифрованным текстом";
-	cout << "Введите ключ шифровки" << endl;
+	wcout << L"Введите ключ шифровки" << endl;
 	int key;
 	cin >> key;
 	str = toUpperCase(str);
@@ -21,9 +23,8 @@ int main() {
 }
 
 wstring encrypt(const wstring & text, const int key) {
-
 	locale loc("ru_RU.UTF-8");
-	locale::global(loc);
+	
 	wstring output = L"";
 	const int LAUNGUAGE_SIZE = 32;
 
@@ -43,7 +44,6 @@ wstring encrypt(const wstring & text, const int key) {
 
 wstring toUpperCase(const wstring & input) {	
 	locale loc("ru_RU.UTF-8");
-	locale::global(loc);
 
 	wstring output = L"";
 	for (wchar_t c : input) {
