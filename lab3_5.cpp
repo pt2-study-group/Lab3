@@ -9,12 +9,15 @@ wstring toUpperCase(const wstring& input);
 
 int main() {
 	setlocale(LC_ALL, "Russian");
+	locale loc("ru_RU.UTF-8");
+	locale::global(loc);
+	
 	wstring str = L"123ЫЪФСЭПЖЛХТНФЗЙМЧФЪЩГШЩЧХСЪШОЗЯПЫЧХЙЗФФВУЩМСШЩХУ";
-	cout << "Введите ключ расшифровки" << endl;
+	wcout << L"Введите ключ расшифровки" << endl;
 	int key;
 	cin >> key;
 	str = toUpperCase(str);
-	if (str._Equal(L"")) {
+	if (str=="") {
 		wcout << L"ОШИБКА" << endl;
 		return -1;
 	}
@@ -27,7 +30,6 @@ int main() {
 wstring decrypt(const std::wstring& text, const int key) {
 
 	locale loc("ru_RU.UTF-8");
-	locale::global(loc);
 	wstring output = L"";
 	const int LAUNGUAGE_SIZE = 32;
 
@@ -45,8 +47,6 @@ wstring decrypt(const std::wstring& text, const int key) {
 
 wstring toUpperCase(const wstring & input) {	
 	locale loc("ru_RU.UTF-8");
-	locale::global(loc);
-
 	wstring output = L"";
 	for (wchar_t c : input) {
 		if ((L'А' <= c && c <= L'Я') || (L'а' <= c && c <= L'я')) {
